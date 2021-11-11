@@ -48,11 +48,11 @@ function createDirectoryIfNotExists({ reporter }, pathname) {
   }
 }
 
-async function onPreBootstrap(options) {
+function onPluginInit(args) {
   // Create all required directories
-  createDirectoryIfNotExists(options, 'pages')
-  createDirectoryIfNotExists(options, 'pages/docs')
-  createDirectoryIfNotExists(options, 'images')
+  createDirectoryIfNotExists(args, 'pages')
+  createDirectoryIfNotExists(args, 'pages/docs')
+  createDirectoryIfNotExists(args, 'images')
 }
 
 function onCreateMdxNode({ node, getNode, actions }, options) {
@@ -248,7 +248,7 @@ const pluginOptionsSchema = (/** @type {{ Joi: import('joi') }} */ { Joi }) => {
 
 module.exports = {
   createSchemaCustomization,
-  onPreBootstrap,
+  onPluginInit,
   onCreateNode,
   createPages,
   pluginOptionsSchema,
