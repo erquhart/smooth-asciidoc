@@ -4,13 +4,13 @@ section: Components
 slug: /docs/components/screen-container/
 ---
 
-import * as smoothDocComponents from 'smooth-doc/components'
+import * as smoothDocComponents from 'smooth-asciidoc/components'
 import * as xstyled from '@xstyled/styled-components'
 
 <smoothDocComponents.LiveConfig
   modules={{
     '@xstyled/styled-components': xstyled,
-    'smooth-doc/components': smoothDocComponents,
+    'smooth-asciidoc/components': smoothDocComponents,
   }}
 />
 
@@ -25,7 +25,7 @@ A screen wrapper to constraint page layout.
 `ScreenContainer` constraints content of the page using `max-width` and `padding`.
 
 ```js live noInline
-import { ScreenContainer } from 'smooth-doc/components'
+import { ScreenContainer } from 'smooth-asciidoc/components'
 
 render(<ScreenContainer>Container</ScreenContainer>)
 ```

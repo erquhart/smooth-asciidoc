@@ -1,5 +1,5 @@
 {
-  "name": "smooth-doc/components",
+  "name": "smooth-asciidoc/components",
   "private": true,
   "sideEffects": false,
   "main": "../src/components/index.js",

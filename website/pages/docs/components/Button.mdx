@@ -5,14 +5,14 @@ slug: /docs/components/button/
 ---
 
 import { Link } from 'gatsby'
-import { Button } from 'smooth-doc/components'
+import { Button } from 'smooth-asciidoc/components'
 import { x } from '@xstyled/styled-components'
 
 <smoothDocComponents.LiveConfig
   modules={{
     gatsby: { Link },
     '@xstyled/styled-components': { x },
-    'smooth-doc/components': { Button },
+    'smooth-asciidoc/components': { Button },
   }}
 />
 
@@ -25,7 +25,7 @@ An accessible action button.
 ## Usage
 
 ```js live noInline
-import { Button } from 'smooth-doc/components'
+import { Button } from 'smooth-asciidoc/components'
 
 render(<Button>A simple button</Button>)
 ```
@@ -36,7 +36,7 @@ Use `variant` property to define button variant. Four variants are available: "p
 
 ```js live noInline
 import { x.div } from '@xstyled/styled-components'
-import { Button } from 'smooth-doc/components'
+import { Button } from 'smooth-asciidoc/components'
 
 render(
   <x.div row m={-2}>
@@ -61,7 +61,7 @@ render(
 Set `disabled` attribute to display button as disabled.
 
 ```js live noInline
-import { Button } from 'smooth-doc/components'
+import { Button } from 'smooth-asciidoc/components'
 
 render(<Button disabled>Disabled button</Button>)
 ```
@@ -72,7 +72,7 @@ It is common to have to display a button that actually behaves like a link. The 
 
 ```js live noInline
 import { Link } from 'gatsby'
-import { Button } from 'smooth-doc/components'
+import { Button } from 'smooth-asciidoc/components'
 
 render(
   <Button as={Link} to="/docs/getting-started/">

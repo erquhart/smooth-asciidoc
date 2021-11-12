@@ -20,10 +20,10 @@ To display a GitHub logo pointing to your repository in navigation, add `githubR
 module.exports = {
   plugins: [
     {
-      resolve: 'smooth-doc',
+      resolve: 'smooth-asciidoc',
       options: {
         // ...
-        githubRepositoryURL: 'https://github.com/gregberge/smooth-doc',
+        githubRepositoryURL: 'https://github.com/gregberge/smooth-asciidoc',
       },
     },
   ],
@@ -39,10 +39,10 @@ To add edit links on documentation pages, you have to add a `baseDirectory` opti
 module.exports = {
   plugins: [
     {
-      resolve: 'smooth-doc',
+      resolve: 'smooth-asciidoc',
       options: {
         // ...
-        githubRepositoryURL: 'https://github.com/gregberge/smooth-doc',
+        githubRepositoryURL: 'https://github.com/gregberge/smooth-asciidoc',
         baseDirectory: __dirname, // The absolute path poiting to the root of your GitHub repository
       },
     },
@@ -61,12 +61,12 @@ If you use a separated repository for your website, you can use `githubDocReposi
 module.exports = {
   plugins: [
     {
-      resolve: 'smooth-doc',
+      resolve: 'smooth-asciidoc',
       options: {
         // ...
-        githubRepositoryURL: 'https://github.com/gregberge/smooth-doc',
+        githubRepositoryURL: 'https://github.com/gregberge/smooth-asciidoc',
         githubDocRepositoryURL:
-          'https://github.com/gregberge/smooth-doc-website',
+          'https://github.com/gregberge/smooth-asciidoc-website',
         baseDirectory: __dirname,
       },
     },

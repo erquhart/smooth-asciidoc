@@ -5,7 +5,7 @@ slug: /docs/theme/
 order: 5
 ---
 
-import { LiveConfig } from 'smooth-doc/components'
+import { LiveConfig } from 'smooth-asciidoc/components'
 import { BuiltInColors } from '../../src/components/Colors'
 
 # Customize Theme
@@ -22,11 +22,11 @@ The theme follows [System UI specification](https://system-ui.com/theme/).
 
 ## Define theme
 
-Create a file `src/smooth-doc/theme.js` and export a `theme` constant:
+Create a file `src/smooth-asciidoc/theme.js` and export a `theme` constant:
 
 ```js
-// src/smooth-doc/theme.js
-import { theme as baseTheme } from 'smooth-doc/src/theme'
+// src/smooth-asciidoc/theme.js
+import { theme as baseTheme } from 'smooth-asciidoc/src/theme'
 
 export const theme = {
   ...baseTheme,
@@ -41,8 +41,8 @@ export const theme = {
 Choose primary color from built-in colors and provide it using `primaryColor` helper:
 
 ```js
-// src/smooth-doc/theme.js
-import { theme as baseTheme, primaryColor } from 'smooth-doc/src/theme'
+// src/smooth-asciidoc/theme.js
+import { theme as baseTheme, primaryColor } from 'smooth-asciidoc/src/theme'
 
 export const theme = {
   ...baseTheme,
@@ -64,8 +64,8 @@ Inspired by [Tailwind](https://tailwindcss.com/), we included several built-in c
 A primary color is a palette composed of 9 tones. To specify a custom primary color, you have to define every tone:
 
 ```js
-// src/smooth-doc/theme.js
-import { theme as baseTheme } from 'smooth-doc/src/theme'
+// src/smooth-asciidoc/theme.js
+import { theme as baseTheme } from 'smooth-asciidoc/src/theme'
 
 export const theme = {
   ...baseTheme,
@@ -96,8 +96,8 @@ A great tool called [Tailwind.ink](https://tailwind.ink/) could help you achieve
 Smooth DOC uses palette as base color. It is possible to change a palette color or a specific feature color. Example to change the code editor background color:
 
 ```js
-// src/smooth-doc/theme.js
-import { theme as baseTheme } from 'smooth-doc/src/theme'
+// src/smooth-asciidoc/theme.js
+import { theme as baseTheme } from 'smooth-asciidoc/src/theme'
 
 export const theme = {
   ...baseTheme,
@@ -113,8 +113,8 @@ export const theme = {
 Smooth DOC uses [xstyled dark mode](https://xstyled.dev/docs/dark-mode/) feature. An entry `modes` in `colors` gives you the opportunity to override colors for dark mode:
 
 ```js
-// src/smooth-doc/theme.js
-import { theme as baseTheme } from 'smooth-doc/src/theme'
+// src/smooth-asciidoc/theme.js
+import { theme as baseTheme } from 'smooth-asciidoc/src/theme'
 
 export const theme = {
   ...baseTheme,
@@ -142,8 +142,8 @@ All default colors are available in [theme definition](https://github.com/gregbe
 By default Smooth DOC uses [System Font Stack](https://css-tricks.com/snippets/css/system-font-stack/). You are free to customize it:
 
 ```js
-// src/smooth-doc/theme.js
-import { theme as baseTheme } from 'smooth-doc/src/theme'
+// src/smooth-asciidoc/theme.js
+import { theme as baseTheme } from 'smooth-asciidoc/src/theme'
 
 export const theme = {
   ...baseTheme,
@@ -178,8 +178,8 @@ module.exports = {
 You can now use it in your `theme.js`:
 
 ```js
-// src/smooth-doc/theme.js
-import { theme as baseTheme } from 'smooth-doc/src/theme'
+// src/smooth-asciidoc/theme.js
+import { theme as baseTheme } from 'smooth-asciidoc/src/theme'
 
 export const theme = {
   ...baseTheme,
@@ -195,8 +195,8 @@ export const theme = {
 Set `prism-theme` property to set a [Prism](https://prismjs.com/) theme:
 
 ```js
-// src/smooth-doc/theme.js
-import { theme as baseTheme } from 'smooth-doc/src/theme'
+// src/smooth-asciidoc/theme.js
+import { theme as baseTheme } from 'smooth-asciidoc/src/theme'
 import NightOwlTheme from 'prism-react-renderer/themes/nightOwl'
 
 export const theme = {
@@ -208,8 +208,8 @@ export const theme = {
 You can also define a a custom theme:
 
 ```js
-// src/smooth-doc/theme.js
-import { theme as baseTheme } from 'smooth-doc/src/theme'
+// src/smooth-asciidoc/theme.js
+import { theme as baseTheme } from 'smooth-asciidoc/src/theme'
 
 export const theme = {
   ...baseTheme,

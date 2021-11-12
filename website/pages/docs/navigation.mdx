@@ -20,7 +20,7 @@ To display links in header navigation, use `navItems: { title: string, url: stri
 module.exports = {
   plugins: [
     {
-      resolve: 'smooth-doc',
+      resolve: 'smooth-asciidoc',
       options: {
         // ...
         navItems: [{ title: 'Docs', url: '/docs/' }],
@@ -32,7 +32,7 @@ module.exports = {
 
 ### Completely customize header navigation
 
-Thanks to Gatsby theme shadowing, it is possible to override the `AppNav` component by creating a component in `src/smooth-doc/components/AppNav.js`.
+Thanks to Gatsby theme shadowing, it is possible to override the `AppNav` component by creating a component in `src/smooth-asciidoc/components/AppNav.js`.
 
 For example, this documentation defines this `AppNav.js`.
 
@@ -45,7 +45,7 @@ import {
   NavLink,
   ColorModeSwitcher,
   Button,
-} from 'smooth-doc/components'
+} from 'smooth-asciidoc/components'
 
 export function AppNav() {
   return (
@@ -87,7 +87,7 @@ To sort sections in side navigation, use `sections: string[]` option.
 module.exports = {
   plugins: [
     {
-      resolve: 'smooth-doc',
+      resolve: 'smooth-asciidoc',
       options: {
         // ...
         sections: ['Guides', 'Components', 'Reference'],
