@@ -1,8 +1,10 @@
 {
-  "name": "smooth-doc",
-  "description": "Ready to use documentation theme for Gatsby.",
+  "name": "smooth-asciidoc",
+  "description": "An Asciidoc documentation theme for Gatsby based on smooth-doc.",
   "keywords": [
     "gatsby",
+    "smooth-doc",
+    "smooth-asciidoc",
     "gatsby-theme",
     "gatsby-plugin",
     "doc",
@@ -10,15 +12,10 @@
     "docs",
     "docusaurus"
   ],
-  "version": "8.1.0",
+  "version": "0.1.0",
   "main": "index.js",
-  "author": "Greg Bergé <hey@gregberge.com>",
-  "repository": "github:gregberge/smooth-doc",
+  "repository": "github:replicatedhq/smooth-asciidoc",
   "license": "MIT",
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/gregberge"
-  },
   "publishConfig": {
     "cache": "~/.npm",
     "access": "public"
