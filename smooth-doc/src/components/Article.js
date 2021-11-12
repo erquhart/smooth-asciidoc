@@ -1,8 +1,46 @@
-import styled, { css, up, down } from '@xstyled/styled-components'
+import styled, { th, css, up, down } from '@xstyled/styled-components'
 
 export const Article = styled.article`
   .anchor {
     fill: on-background;
+  }
+
+  pre {
+    font-size: 15;
+    line-height: 1.45;
+    word-break: normal;
+    overflow: auto;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    margin: 3 -3;
+    background-color: editor-background;
+    color: editor-on;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    hyphens: none;
+    padding: 4 0;
+    border-left: ${th.space(4)} solid transparent;
+    border-right: ${th.space(4)} solid transparent;
+
+    textarea {
+      &:focus {
+        outline: none;
+      }
+    }
+
+    ${up(
+      'sm',
+      css`
+        border-radius: editor;
+        margin: 3 -2;
+      `,
+    )}
   }
 
   code {
@@ -16,7 +54,7 @@ export const Article = styled.article`
     background-color: background-mark;
   }
 
-  > p {
+  p {
     margin: 3 0;
     font-size: 16;
     line-height: 1.6;
@@ -24,7 +62,8 @@ export const Article = styled.article`
   }
 
   /* Intro */
-  > h1 + p {
+  h1 + p,
+  h1 + .paragraph > p {
     font-size: 18;
     font-weight: 300;
     color: on-background-light;
@@ -44,7 +83,7 @@ export const Article = styled.article`
     }
   }
 
-  > hr {
+  hr {
     margin: 0;
     height: 0;
     border: 0;
@@ -57,14 +96,14 @@ export const Article = styled.article`
     }
   }
 
-  > h1 {
+  h1 {
     font-size: 32;
     line-height: 1.1;
     font-weight: 600;
     margin: 40 0 2;
   }
 
-  > h2 {
+  h2 {
     font-size: 24;
     line-height: 1.2;
     font-weight: 600;
@@ -74,14 +113,13 @@ export const Article = styled.article`
     border-color: layout-border;
   }
 
-  > h1 + h2,
-  > h2:first-child {
+  h1 + h2 {
     border-top: 0;
     margin-top: 0;
     padding-top: 0;
   }
 
-  > h3 {
+  h3 {
     font-size: 18;
     line-height: 1.2;
     font-weight: 600;
@@ -96,18 +134,18 @@ export const Article = styled.article`
     )}
   }
 
-  > h4 {
+  h4 {
     font-weight: 500;
     font-size: 16;
     line-height: 1.2;
     margin: 3 0;
   }
 
-  > h4 + p {
+  h4 + p {
     margin-top: 3;
   }
 
-  > ul + p {
+  ul + p {
     margin-top: 2;
   }
 
@@ -131,7 +169,7 @@ export const Article = styled.article`
     )}
   }
 
-  > code {
+  code {
     background-color: editor-background;
     border-radius: base;
     color: inherit;
@@ -177,7 +215,7 @@ export const Article = styled.article`
     list-style: disc;
   }
 
-  > blockquote {
+  blockquote {
     font-size: 16;
     background-color: blockquote-background;
     border-left: 8;

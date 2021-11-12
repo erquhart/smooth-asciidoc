@@ -1,23 +1,21 @@
----
-title: Getting Started
-section: Guides
-slug: /docs/getting-started-mdx/
-order: 1
----
+= Getting Started
 
-import GettingStarted from '../../partials/getting-started.mdx'
+:page-slug: /docs/getting-started/
+:page-order: 1
+:page-section: Asciidoc
 
-# Overview
+= Overview
 
 Getting started with Smooth DOC.
 
-## What is Smooth DOC?
+== What is Smooth DOC?
 
-Smooth DOC is a ready-to-use [Gatsby](https://gatsbyjs.com/) theme to create a documentation website like this one. Creating a pro-quality website like this one takes weeks. Smooth DOC saves you lot of time and lets you focus on the content.
+Smooth DOC is a ready-to-use link:https://gatsbyjs.com/[Gatsby] theme to create a documentation website like this one. Creating a pro-quality website like this one takes weeks. Smooth DOC saves you lot of time and lets you focus on the content.
 
-## Why I created it?
+== Why I created it?
 
-As the maintainer of large libraries such as [SVGR](https://react-svgr.com/), [Loadable Components](https://loadable-components.com/) or [xstyled](https://xstyled.dev/), I had to create lot of documentation websites.
+As the maintainer of large libraries such as link:https://react-svgr.com/[SVGR],
+link:https://loadable-components.com/[Loadable Components] or link:https://xstyled.dev/[xstyled], I had to create lot of documentation websites.
 
 I quickly created a system to be able to generate these many sites. At this time, Gatsby was still in boxes and other tools were not flexible enough for me.
 
@@ -25,7 +23,7 @@ Initially Smooth DOC was just a utility library to share common React components
 
 Converting it into a Gatsby theme made it very portable and reusable. After a big work of refactoring, Smooth DOC was born!
 
-## What are the differences with other documentation generators?
+== What are the differences with other documentation generators?
 
 Smooth DOC is opinionated, it generates a pro-quality documentation website with a minimal configuration.
 
@@ -46,7 +44,7 @@ It includes many features:
 
 All of these features make Smooth DOC the most advanced documentation system.
 
-## Personalize options
+== Personalize options
 
 Smooth DOC options are filled directly in `gatsby-config.js`. To make it yours, fill `name`, `description` and `siteUrl`:
 
