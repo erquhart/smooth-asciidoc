@@ -5,9 +5,19 @@ import { DocLayout } from './DocLayout'
 export function PageWrapper({
   children,
   props: {
-    data: { mdx },
+    data: { mdx, asciidoc },
   },
 }) {
+  // Assumes any asciidoc page is a docs page, will need to
+  // be updated if non-docs pages also use asciidoc
+  if (asciidoc) {
+    return (
+      <DocLayout title={asciidoc.fields.title}>
+        {children}
+      </DocLayout>
+    )
+  }
+
   if (!mdx?.fields?.pageType) return children
   switch (mdx.fields.pageType) {
     case 'doc':

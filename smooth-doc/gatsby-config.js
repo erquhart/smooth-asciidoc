@@ -78,6 +78,14 @@ module.exports = (options) => {
           ],
         },
       },
+      {
+        resolve: "gatsby-transformer-asciidoc",
+        options: {
+          attributes: {
+            imagesdir: '/images',
+          },
+        },
+      },
       'gatsby-transformer-sharp',
       'gatsby-plugin-sharp',
       'gatsby-plugin-react-helmet',

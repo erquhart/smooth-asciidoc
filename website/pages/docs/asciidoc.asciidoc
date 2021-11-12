@@ -1,0 +1,19 @@
+= Hello world
+:page-slug: /docs/asciidoc/
+:page-order: 0
+:page-section: Asciidoc
+
+== Getting Started
+
+Hello, world!
+
+Add content here!
+
+Yay!
+
+An example of code block:
+
+[source,javascript]
+----
+const foo = 'bar'
+----

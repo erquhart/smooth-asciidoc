@@ -10,7 +10,7 @@ module.exports = {
         description: 'Ready to use documentation theme for Gatsby.',
         baseDirectory: path.resolve(__dirname, '../'),
         author: 'Greg Bergé',
-        sections: ['About', 'Guide', 'Components', 'Reference'],
+        sections: ['Asciidoc', 'About', 'Guides', 'Components', 'Reference'],
         navItems: [{ title: 'Docs', url: '/docs/' }],
         twitterAccount: 'neoziro',
         githubRepositoryURL: 'https://github.com/gregberge/smooth-doc/',

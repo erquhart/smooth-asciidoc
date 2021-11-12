@@ -55,6 +55,77 @@ function onPluginInit(args) {
   createDirectoryIfNotExists(args, 'images')
 }
 
+function onCreateAsciidocNode({ node, getNode, actions }, options) {
+  const { createNodeField } = actions
+  const slug = node.pageAttributes.slug || createFilePath({ node, getNode })
+  const pageType = 'doc'
+
+  createNodeField({
+    name: 'id',
+    node,
+    value: node.id,
+  })
+
+  createNodeField({
+    name: 'pageType',
+    node,
+    value: pageType,
+  })
+
+  createNodeField({
+    name: 'title',
+    node,
+    value: node.document.title,
+  })
+
+  createNodeField({
+    name: 'description',
+    node,
+    value: node.pageAttributes.description || '',
+  })
+
+  createNodeField({
+    name: 'slug',
+    node,
+    value: slug,
+  })
+
+  createNodeField({
+    name: 'section',
+    node,
+    value: node.pageAttributes.section || '',
+  })
+
+  createNodeField({
+    name: 'redirect',
+    node,
+    value: node.pageAttributes.redirect || '',
+  })
+
+  function getOrderField() {
+    if (!Number.isNaN(Number(node.pageAttributes.order))) {
+      return node.pageAttributes.order
+    }
+    return -9999
+  }
+
+  createNodeField({
+    name: 'order',
+    node,
+    value: getOrderField(),
+  })
+
+  const url = new URL(getSiteUrl(options))
+  url.pathname = slug
+
+  createNodeField({
+    name: 'url',
+    node,
+    value: url.toString(),
+  })
+}
+
+
 function onCreateMdxNode({ node, getNode, actions }, options) {
   const { createNodeField } = actions
   const slug = node.frontmatter.slug || createFilePath({ node, getNode })
@@ -150,9 +221,12 @@ function onCreateNode(...args) {
   if (args[0].node.internal.type === `Mdx`) {
     onCreateMdxNode(...args)
   }
+  if (args[0].node.internal.type === `Asciidoc`) {
+    onCreateAsciidocNode(...args)
+  }
 }
 
-async function createPages({ graphql, actions, reporter }) {
+async function createPagesMdx({ graphql, actions, reporter }) {
   const { createPage, createRedirect } = actions
 
   const { data, errors } = await graphql(`
@@ -214,6 +288,64 @@ async function createPages({ graphql, actions, reporter }) {
       },
     })
   })
+}
+
+async function createPagesAsciidoc({ graphql, actions, reporter }) {
+  const { createPage, createRedirect } = actions
+
+  const { data, errors } = await graphql(`
+    query {
+      allAsciidoc {
+        edges {
+          node {
+            id
+            html
+            document {
+              title
+              subtitle
+              main
+            }
+            author {
+              lastName
+              middleName
+              authorInitials
+              email
+            }
+            pageAttributes {
+              slug
+              order
+              section
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  // Create pages
+  data.allAsciidoc.edges.forEach(({ node }) => {
+    createPage({
+      path: node.pageAttributes.slug,
+      component: path.resolve(
+        __dirname,
+        `./src/templates/doc.js`,
+      ),
+      context: {
+        id: node.id,
+      },
+    })
+  })
+}
+
+
+async function createPages({ graphql, actions, reporter }) {
+  await createPagesMdx({ graphql, actions, reporter })
+  await createPagesAsciidoc({ graphql, actions, reporter })
 }
 
 const pluginOptionsSchema = (/** @type {{ Joi: import('joi') }} */ { Joi }) => {

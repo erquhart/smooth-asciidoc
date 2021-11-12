@@ -1,11 +1,27 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link, withPrefix } from 'gatsby'
 import styled from '@xstyled/styled-components'
+import { sortBy } from 'lodash'
 // eslint-disable-next-line import/no-unresolved
 import { useLocation } from '@reach/router'
 
 const SideNavQuery = graphql`
   query SideNavQuery {
+    allAsciidoc(filter: { fields: { pageType: { eq: "doc" }, title: { ne: "" } } }) {
+      edges {
+        node {
+          id
+          fields {
+            title
+            pageType
+            section
+            order
+            slug
+          }
+        }
+      }
+    }
+
     allMdx(filter: { fields: { pageType: { eq: "doc" }, title: { ne: "" } } }) {
       edges {
         node {
@@ -116,19 +132,29 @@ const NavGroupMenuItem = styled.li`
   }
 `
 
-const sortGroupsWithConfig = (section) => (a, b) => {
-  const indexA = section.indexOf(a.name)
-  const indexB = section.indexOf(b.name)
-  const diff = indexA - indexB
-  return diff === 0 ? 0 : diff < 0 ? -1 : 1
+const sortNavGroups = (groups, sections) => {
+  const sorted = sections.map(section => groups.find(group => {
+    return section === group.name && group
+  })).filter(v => v)
+  console.log(sorted)
+  const unsorted = sortBy(groups.filter(group => {
+    return sorted.every(({ name }) => {
+      return group.name !== name
+    })
+  }), 'name')
+  return [...sorted, ...unsorted]
 }
 
 export function useSideNavState() {
   const data = useStaticQuery(SideNavQuery)
   return React.useMemo(() => {
-    const navGroups = groupNodes(data.allMdx.edges.map((edge) => edge.node))
-    navGroups.sort(sortGroupsWithConfig(data.site.siteMetadata.sections))
-    return { navGroups }
+    const navGroups = groupNodes([
+      ...data.allMdx.edges.map((edge) => edge.node),
+      ...data.allAsciidoc.edges.map((edge) => edge.node),
+    ])
+    const sections = data.site.siteMetadata.sections
+    const sortedNavGroups = sortNavGroups(navGroups, sections)
+    return { navGroups: sortedNavGroups }
   }, [data])
 }
 
