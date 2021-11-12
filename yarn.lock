@@ -16846,57 +16846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"smooth-asciidoc@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "smooth-asciidoc@npm:0.2.0"
-  dependencies:
-    "@babel/core": ^7.16.0
-    "@docsearch/css": ^3.0.0-alpha.41
-    "@docsearch/react": ^3.0.0-alpha.41
-    "@mdx-js/mdx": ^1.6.22
-    "@mdx-js/react": ^1.6.22
-    "@xstyled/styled-components": ^3.1.2
-    babel-plugin-styled-components: ^1.13.3
-    babel-preset-gatsby: ^2.1.2
-    core-js: ^3.19.1
-    fs-extra: ^10.0.0
-    gatsby-plugin-catch-links: ^4.1.0
-    gatsby-plugin-compile-es6-packages: ^2.1.1
-    gatsby-plugin-image: ^2.1.2
-    gatsby-plugin-manifest: ^4.1.3
-    gatsby-plugin-mdx: ^3.1.3
-    gatsby-plugin-meta-redirect: ^1.1.1
-    gatsby-plugin-react-helmet: ^5.1.0
-    gatsby-plugin-robots-txt: 1.6.14
-    gatsby-plugin-sharp: ^4.1.3
-    gatsby-plugin-sitemap: ^5.1.1
-    gatsby-plugin-styled-components: ^5.1.0
-    gatsby-remark-images: ^6.1.3
-    gatsby-source-filesystem: ^4.1.2
-    gatsby-transformer-asciidoc: ^3.1.0
-    gatsby-transformer-sharp: ^4.1.0
-    github-slugger: ^1.4.0
-    lodash: ^4.17.21
-    mdast-util-to-string: ^2.0.0
-    polished: ^4.1.3
-    prism-react-renderer: ^1.2.1
-    prismjs: ^1.25.0
-    react-helmet: ^6.1.0
-    react-icons: ^4.3.1
-    react-is: ^17.0.2
-    react-live: ^2.4.0
-    reakit: ^1.3.10
-    styled-components: ^5.3.3
-    unist-util-visit: ^2.0.3
-  peerDependencies:
-    gatsby: ^4.1.4
-    react: "*"
-    react-dom: "*"
-  checksum: 3bfc83ed68b2a7d1e72b4e16c2e8fe18b8429e6f6d5ff4928325d34c6bf387ee9b9cbcf812300fdd04d4788f49808de3ab0077ebf48dc05b118d373923c1ed5c
-  languageName: node
-  linkType: hard
-
-"smooth-asciidoc@workspace:smooth-asciidoc":
+"smooth-asciidoc@workspace:^, smooth-asciidoc@workspace:smooth-asciidoc":
   version: 0.0.0-use.local
   resolution: "smooth-asciidoc@workspace:smooth-asciidoc"
   dependencies:
@@ -19327,7 +19277,7 @@ __metadata:
     react-helmet: ^6.1.0
     react-icons: ^4.3.1
     react-is: ^17.0.2
-    smooth-asciidoc: ^0.2.0
+    smooth-asciidoc: "workspace:^"
     styled-components: ^5.3.3
   languageName: unknown
   linkType: soft

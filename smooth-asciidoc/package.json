@@ -1,6 +1,6 @@
 {
   "name": "smooth-asciidoc",
-  "description": "An Asciidoc documentation theme for Gatsby based on smooth-asciidoc.",
+  "description": "An Asciidoc documentation theme for Gatsby based on smooth-doc",
   "files": [
     "src/**/*",
     "pages/**/*",
@@ -10,7 +10,7 @@
     "index.js"
   ],
   "keywords": [
-    "smooth-asciidoc",
+    "smooth-doc",
     "smooth-asciidoc",
     "gatsby-theme",
     "gatsby-plugin",
