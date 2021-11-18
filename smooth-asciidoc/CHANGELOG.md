@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/replicatedhq/smooth-asciidoc/compare/v8.1.0...v0.3.1) (2021-11-18)
+
 ## [8.1.0](https://github.com/gregberge/smooth-doc/compare/v8.0.1...v8.1.0) (2021-09-17)
 
 
