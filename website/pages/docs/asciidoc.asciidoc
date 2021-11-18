@@ -16,3 +16,7 @@ An example of a code block:
 ----
 const foo = 'bar'
 ----
+
+Here's an image from `static/images`:
+
+image::karthik-sreenivas-IKf4BZ-C--Q-unsplash.jpg[Photo of night sky by Karthik Sreenivas]
