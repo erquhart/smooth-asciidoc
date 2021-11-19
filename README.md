@@ -1,1 +1,1 @@
-smooth-doc/README.md
+smooth-asciidoc/README.md
